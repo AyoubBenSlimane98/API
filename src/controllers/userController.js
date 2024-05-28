@@ -1,7 +1,7 @@
 import { User } from '../schemas/user.mjs';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-
+ 
 export const getUsers = async (req, res) => {
   try {
     const user = await User.find();
