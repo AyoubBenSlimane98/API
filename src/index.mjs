@@ -2,13 +2,17 @@ import express from 'express';
 import mongoose from 'mongoose';
 import routes from './routes/indexRoutes.mjs';
 import 'dotenv/config';
-
+import cors from 'cors';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+  })
+);
 //Routers
 app.use(routes);
 
