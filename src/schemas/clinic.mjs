@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const clinicShema = new mongoose.Schema({
-  userId: {
-    type: Number,
-    required: true,
-    unique: true,
-  },
   title: {
     type: String,
     required: true,
