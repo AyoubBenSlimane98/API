@@ -22,7 +22,7 @@ export const getApppointment = async (req, res) => {
 };
 
 export const createApppointment = async (req, res) => {
-  console.log(req.body);
+
   try {
     const newApppointment = new Apppointment(req.body);
     const saveApppointment = await newApppointment.save();

@@ -21,7 +21,15 @@ export const getContact = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
+export const createContact = async (req, res) => {
+  try {
+    const newContact = new Contact(req.body);
+    const savedContact = await newContact.save();
+    res.status(201).json(savedContact);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 export const deleteContact = async (req, res) => {
   try {
     const { id } = req.params;
