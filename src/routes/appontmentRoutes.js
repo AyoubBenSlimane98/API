@@ -3,10 +3,10 @@ import { getApppointments, getApppointment, createApppointment, updateApppointme
 
 const router = Router();
 
-router.get('/api/apppointment', getApppointments);
-router.get('/api/apppointment/:id', getApppointment);
-router.post('/api/apppointment', createApppointment);
-router.put('/api/apppointment/:id', updateApppointment);
-router.delete('/api/apppointment/:id', deleteApppointment);
+router.get('/api/apppointments', getApppointments);
+router.get('/api/apppointments/:id', getApppointment);
+router.post('/api/apppointments', createApppointment);
+router.put('/api/apppointments/:id', updateApppointment);
+router.delete('/api/apppointments/:id', deleteApppointment);
 
 export default router; 
