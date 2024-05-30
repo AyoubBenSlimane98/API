@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import routes from './routes/indexRoutes.mjs';
 import 'dotenv/config';
 import cors from 'cors';
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 //for localhost 
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3001', 'http://localhost:3000'],
   })
 );
 //Routers
