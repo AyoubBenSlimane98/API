@@ -3,7 +3,7 @@ import {getAdmins,getAdmin , createAdmin , updateAdmin , deleteAdmin } from '../
 const router = Router(); 
 router.get('/api/admin', getAdmins); 
 router.get('/api/admin/:id', getAdmin); 
-router.post('/api/admin/:id', createAdmin);
-router.put('/api/admin/:id', updateAdmin);
+router.post('/api/admin', createAdmin);
+router.patch('/api/admin/:id', updateAdmin);
 router.delete('/api/admin/:id', deleteAdmin);
 export default router; 
