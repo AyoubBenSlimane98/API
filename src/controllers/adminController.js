@@ -31,7 +31,7 @@ export const createAdmin = async (req, res) => {
     const {username , password } =
       req.body;
 
-    const user = await Admin.findOne({ email });
+    const user = await Admin.findOne({ username });
     if (user) {
       return res.status(400).json({ message: 'User already exists!.' });
     }
