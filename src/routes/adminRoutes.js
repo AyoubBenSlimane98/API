@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {getAdmins,getAdmin , createAdmin , updateAdmin , deleteAdmin } from '../controllers/adminController';
+import {getAdmins,getAdmin , createAdmin , updateAdmin , deleteAdmin } from '../controllers/adminController.js';
 const router = Router(); 
 router.get('/api/admin', getAdmins); 
 router.get('/api/admin/:id', getAdmin); 
