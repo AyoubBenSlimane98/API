@@ -88,7 +88,7 @@ export const deleteAdmin = async (req, res) => {
 export const loginAdmin = async (req, res) => {
   try {
     const { username, password } = req.body;
-    const user = await User.findOne({ username });
+    const user = await Admin.findOne({ username });
 
     //test email
     if (!user) {
