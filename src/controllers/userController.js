@@ -114,6 +114,7 @@ export const loginUser = async (req, res) => {
   }
 };
 
+
 export const validateEmail = async (req, res) => {
   try {
     const { email } = req.body;

@@ -85,3 +85,27 @@ export const deleteAdmin = async (req, res) => {
   }
 };
 
+export const loginAdmin = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username });
+
+    //test email
+    if (!user) {
+      return res.status(404).json({ message: 'User dos not  exists!.' });
+    }
+
+    //test password
+    const isPassword = bcrypt.compareSync(password, user.password);
+    if (!isPassword) {
+      return res
+        .status(404)
+        .json({ message: 'username or Password is not correct!.' });
+    }
+    //add token for real  user
+    const token = jwt.sign({ id: user._id }, process.env.SECRET);
+    return res.status(201).json({ token, userId: user._id });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
