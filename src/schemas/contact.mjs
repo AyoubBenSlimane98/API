@@ -17,6 +17,9 @@ const contactShema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  isDone: {
+    type : Boolean 
+  }
 });
 
 export const Contact = mongoose.model('Contact', contactShema); 
